@@ -2,26 +2,19 @@ $(document).ready(function() {
 
   // - Add an event listener for clicking hamburger menu icon
   $('.menu-icon').on('click', function() {
-    //this.parent (for styling dropdown once expanded. Modifying below code)
     
-    var $dropdown = $(this).parent();
-   
+    var $icon = $(this);
+    
     // If the menu is shown, transitionOut
-<<<<<<< HEAD
-    if ($dropdown.hasClass('menu-open')) {
-      $dropdown.removeClass('menu-open');
-      transitionOut();
-=======
     if ($icon.hasClass('menu-open')) {
           
        transitionOut(function(){
         $icon.removeClass('menu-open');
        });
->>>>>>> refs/remotes/origin/view-pages
     }
     // Else, transitionIn
     else {
-      $dropdown.addClass('menu-open');
+      $icon.addClass('menu-open');
       transitionIn();
     }
     
@@ -62,20 +55,6 @@ $(document).ready(function() {
 
   };
 
-<<<<<<< HEAD
-});
-
-
-
-// add class .drop-down stating whether or not you are expanded. 
-  
-  
-  // Plugin example
-  // $('.menu-icon').fancyMenu({
-  //   linkClass: '.animated_link_start'
-  // });
-  
-=======
   $(function($) {
     var options = {
       $menu: false,
@@ -133,8 +112,3 @@ $(document).ready(function() {
 // });
 
 });
-
->>>>>>> refs/remotes/origin/view-pages
-
-
-
