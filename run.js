@@ -7,9 +7,17 @@ $(document).ready(function() {
     var $dropdown = $(this).parent();
    
     // If the menu is shown, transitionOut
+<<<<<<< HEAD
     if ($dropdown.hasClass('menu-open')) {
       $dropdown.removeClass('menu-open');
       transitionOut();
+=======
+    if ($icon.hasClass('menu-open')) {
+          
+       transitionOut(function(){
+        $icon.removeClass('menu-open');
+       });
+>>>>>>> refs/remotes/origin/view-pages
     }
     // Else, transitionIn
     else {
@@ -36,12 +44,7 @@ $(document).ready(function() {
     });
   }
   
-  function transitionOut() {
-    // - Remove class `animated_link_end` from each link
-
-       // - Remove class `animated_link_end` from each link
-
-    //below code does not work
+  function transitionOut(callback) {
     var time = 0;
     var delay = 200;
 
@@ -52,12 +55,14 @@ $(document).ready(function() {
 
       setTimeout(function() {
         $link.removeClass('animated_link_end');
+        setTimeout(callback, 1000);
       }, time);
 
     })
 
   };
 
+<<<<<<< HEAD
 });
 
 
@@ -70,6 +75,66 @@ $(document).ready(function() {
   //   linkClass: '.animated_link_start'
   // });
   
+=======
+  $(function($) {
+    var options = {
+      $menu: false,
+      menuSelector: 'a',
+      panelSelector: '.slide1, .slide2, .slide3, .slide4',
+      namespace: '.panelSnap',
+      onSnapStart: function(){},
+      onSnapFinish: function(){},
+      onActivate: function(){},
+      directionThreshold: 50,
+      slideSpeed: 200,
+      easing: 'linear',
+      offset: 0,
+      navigation: {
+        keys: {
+          nextKey: false,
+          prevKey: false,
+        },
+        buttons: {
+          $nextButton: false,
+          $prevButton: false,
+        },
+        wrapAround: false
+      }
+    };
+
+    $('body').panelSnap(options);
+  });
+  // $(function() {
+  //   // Stick the #nav to the top of the window
+  //   var nav = $('.menu-icon');
+  //   var navHomeY = nav.offset().top;
+  //   var isFixed = false;
+  //   var $w = $(window);
+  //   $w.scroll(function() {
+  //       var scrollTop = $w.scrollTop();
+  //       var shouldBeFixed = scrollTop > navHomeY;
+  //       if (shouldBeFixed && !isFixed) {
+  //           nav.css({
+  //               position: 'fixed',
+  //               top: 0,
+  //               left: nav.offset().left,
+  //               width: nav.width()
+  //           });
+  //           isFixed = true;
+  //       }
+  //       else if (!shouldBeFixed && isFixed)
+  //       {
+  //           nav.css({
+  //               position: 'static'
+  //           });
+  //           isFixed = false;
+  //       }
+  //   });
+// });
+
+});
+
+>>>>>>> refs/remotes/origin/view-pages
 
 
 
