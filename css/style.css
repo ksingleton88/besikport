@@ -1,38 +1,36 @@
-
 @font-face {
-    font-family: 'inknut_antiquaextrabold';
-    src: url('fonts/inknutantiqua-extrabold-webfont.eot');
-    src: url('fonts/inknutantiqua-extrabold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/inknutantiqua-extrabold-webfont.woff') format('woff'),
-         url('fonts/inknutantiqua-extrabold-webfont.ttf') format('truetype'),
-         url('fonts/inknutantiqua-extrabold-webfont.svg#inknut_antiquaextrabold') format('svg');
+    font-family: 'born_a_sinnerregular';
+    src: url('..fonts/bornasinner-webfont.woff2') format('woff2'),
+         url('../fonts/bornasinner-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
 .slide1{
-	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/background_zpsrvjn4kvr.png');
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/background_zpsj0wh5ecn.jpg');
 	background-size: cover;
 	background-position: center;
 	width: 100%;
-	height: 700px;
+	height: 100vh;
 	text-align: center;
 	margin: 0 auto;
 	padding: 0;
-		transition:all .5s linear; 
+	display: flex;
+
+	/*	transition:all .5s linear; 
 	    -o-transition:all .5s linear; 
 	    -moz-transition:all .5s linear; 
-	    -webkit-transition:all .5s linear;
+	    -webkit-transition:all .5s linear;*/
 
 }
-
 
 .button{
-	width: 30%;
+	width: 60%;
 }
+
 .dropdown {
-	position: relative;
+	position: fixed;
+	width: 100%;
 	/*background-color: #FFFFFF;*/
 }
 
@@ -42,10 +40,10 @@
 
 .dropdown .dropdown-menu{
 /*	display: none;*/
-	margin: 0;
+	margin-top: -50px;
 	list-style: none;
 	padding: 0;
-
+	font-family: 'born_a_sinnerregular';
 	/*width: 0;
 	overflow: hidden;*/
 }
@@ -55,24 +53,27 @@
 	color: #FFFFFF;
 	border: none;
 	margin-right: 90%;
-	padding: 0;
+	padding-top: 3%;
 }
 
 .dropdown a{
-	display: block;
 	padding: 0.2em 0.8em;
 	text-decoration: none;
-	background-color: #FFFFFF;
-	color: #333333;
+	font-size: 2em;
+	color: #000000;
+
 }
 
 .dropdown a:hover{
-	background: #BBBBBB;
+	font-style: italic;
+	
 }
-
+.menu-open + .dropdown-menu .animated_link_start{
+	display: block;
+}
 .animated_link_start{
 	opacity: 0;
-	display: block;
+	display: none;
     /* Start with a position relative 10px up  */
     -webkit-transition: opacity 1s ease;
     -moz-transition: opacity 1s ease;
@@ -96,62 +97,283 @@
 }
 
 
-.title h1{
+.title{
 	color: #000000;
-	font-size: 7em;
-	margin: 0 auto;
-	padding-top: 14%;
-	font-family: 'inknut_antiquaextrabold';
-
+	font-size: 3.2em;
+	margin: auto;
+	font-family: 'born_a_sinnerregular';
 }
 
 .slide2, 
-.slide3,
-.slide4{
+.slide3{
 	width: 100%;
-	height: 700px;
+	height: 100vh;
+	display: flex;
+	background-size: cover;
+	background-position: center;
+
 }
 
 .slide2{
-	background-color: #303032;
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/slideback_zpswlzzkenu.jpg');
+}
+
+.slide2 p{
+	margin: auto;
+	font-size: 3em;
+	font-family: 'born_a_sinnerregular';
+}
+
+
+.profileOne img,
+.profileTwo img{
+	width: 300px;
+	height: 300px;
+	border-radius: 150px;
+	-webkit-border-radius: 150px;
+	-moz-border-radius: 150px;
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-webkit-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+	-moz-box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+
+.about-content{
+	margin: auto;
 	text-align: center;
+	display: inline-block;
+	padding-top: 5%;
+}
+
+
+.profileOne,
+.profileTwo {
+	display: inline-block;
+	text-align: center;
+	padding: 80px;
+	position: relative;
+}
+
+.profileOne .fa,
+.profileTwo .fa{
+	margin: auto;
+	color: white;
+	font-size: 40px;
+	padding-top: 10px;
+}
+
+.bubble{
+  position:absolute;
+  width: 200px;
+  height: 35px;
+  padding:15px 30px;
+  margin:0;
+  top: 10px;
+  right: 70px;
+  z-index: 10;
+
+  color:#000;
+  background:#E0E0E0; /* default background for browsers without gradient support */
+  /* css3 */
+  background:-webkit-gradient(linear, 0 0, 0 100%, from(#E0E0E0), to(#E0E0E0));
+  background:-moz-linear-gradient(#E0E0E0, #E0E0E0);
+  background:-o-linear-gradient(#E0E0E0, #E0E0E0);
+  background:linear-gradient(#E0E0E0, #E0E0E0);
+  /* Using longhand to avoid inconsistencies between Safari 4 and Chrome 4 */
+  -webkit-border-top-left-radius:25px 50px;
+  -webkit-border-top-right-radius:25px 50px;
+  -webkit-border-bottom-right-radius:25px 50px;
+  -webkit-border-bottom-left-radius:25px 50px;
+  -moz-border-radius:25px / 50px;
+  border-radius:25px / 50px;
+
+  transition: 1s ease;
+  opacity: 0;
+}
+
+/* display of quote author (alternatively use a class on the element following the blockquote) */
+/*.bubble + p {margin:10px 150px 2em 0; text-align:right; font-style:italic;}
+*/
+/* creates the larger triangle */
+.bubble:before {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  right:80px;
+  border-width:0 0 30px 50px;
+  border-style:solid;
+  border-color:transparent #E0E0E0;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+/* creates the smaller triangle */
+.bubble:after {
+  content:"";
+  position:absolute;
+  bottom:-30px;
+  right:110px;
+  border-width:0 0 30px 20px;
+  border-style:solid;
+  border-color:transparent #fff;
+  /* reduce the damage in FF3.0 */
+  display:block;
+  width:0;
+}
+
+.bubble p{
+	font-size: 15px;
+	font-family: "Comic Sans MS", cursive, sans-serif;
+}
+
+img:hover + .bubble{
+	opacity: 1;
 }
 
 .slide3{
 	background-color: #400000;
 	text-align: center;
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/sea_zpsdz50aanz.jpg');
 }
 
-.slide4{
-	background-color: #303032;
-	text-align: center;
+#projects span{
+	margin-top: 0px; 
+	display: block;
+	color: #000000;
+	opacity: 0;
+	transition: opacity 1s ease, margin-top .5s ease;
+	font-size: 20px;
+	font-weight: bold;
+
 }
 
+#projects:hover span{
+	color: #000000;
+	margin-top: 100px;
+	opacity: 1;
 
-.footer{
-	width: 100%;
+}
+.project-content{
+	margin: auto;
 	height: 300px;
 }
 
+a:hover{
+	opacity: 0.9;
+    filter: alpha(opacity=90);
+    color: #778899;
+
+}
+
+
+
+#projects {
+	width: 200px;
+	height: 65px;
+	border: solid;
+	border:none;
+	margin: auto;
+	text-align: center;
+	background-size: cover;
+	background-position: center;
+
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+#projects:before {
+  pointer-events: none;
+  position: absolute;
+  border: none;
+  z-index: -1;
+  content: '';
+  top: 100%;
+  left: 5%;
+  height: 10px;
+  width: 90%;
+  opacity: 0;
+  background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0) 80%);
+  /* W3C */
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+}
+#projects:hover, #projects:focus, #projects:active {
+  -webkit-transform: translateY(-5px);
+  transform: translateY(-5px);
+  border:none;
+  /* move the element up by 5px */
+}
+#projects:hover:before, #projects:focus:before, #projects:active:before {
+  opacity: 1;
+  -webkit-transform: translateY(5px);
+  transform: translateY(5px);
+  border:none;
+  /* move the element down by 5px (it will stay in place because it's attached to the element that also moves up 5px) */
+}
+.p1{
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/YUSHYICON_zps4q7zckbl.jpg');
+}
+.p2{
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/beermeicon_zps1o02pgbj.jpg');
+}
+.p3{
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/quizicon_zpsxr48ktiw.jpg');
+}
+.p4{
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/alienicon_zpsgt4rscuq.jpg');
+}
+.p5{
+	background-image: url('http://i1077.photobucket.com/albums/w462/ksingleton88/shoppingicon_zpspxsqjtpr.jpg');
+}
 
 
 @media (max-width: 776px){
 	.title{
-		font-size: .5em;
+		font-size: 1.5em;
 	}	
 
 	.slide1{
 		height: 400px;
 	
 	}
-	.button{
+/*	.button{
 		width: 60%;
+<<<<<<< HEAD
 	}
 
 @media (max-width: 500px){	
 
 	.title{
 		font-size: .4em;
+=======
+	}*/
+	.dropdown a{
+		font-size: 1.5em;
+	}
+
+/*@media (max-width: 500px){	
+
+	.title{
+		font-size: 1em;
+	}
+	.dropdown a{
+		font-size: 1em;
+>>>>>>> refs/remotes/origin/view-pages
 	}
 
 	.slide1{
@@ -160,7 +382,11 @@
 	}
 	.button{
 		width: 60%;
+<<<<<<< HEAD
 	}
+=======
+	}*/
+>>>>>>> refs/remotes/origin/view-pages
 
 	.slide1,
 	.button,
